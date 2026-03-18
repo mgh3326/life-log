@@ -1,7 +1,7 @@
 .PHONY: dev mcp test lint format migrate
 
 dev:
-	uvicorn app.main:app --host 0.0.0.0 --port 8766 --reload
+	uvicorn app.main:app --host 0.0.0.0 --port $${API_PORT:-8766} --reload
 
 mcp:
 	python -m app.mcp_server.main
