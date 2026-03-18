@@ -18,7 +18,7 @@ def test_mcp_main_uses_configured_host_and_port(monkeypatch):
     # This is a bit tricky to test without actually running the server.
     # The plan suggests: monkeypatch.setattr(mcp_main.mcp, "run", lambda **kwargs: kwargs)
     # But mcp.run is called in main().
-    
+
     captured_args = {}
 
     def mock_run(**kwargs):
@@ -27,9 +27,9 @@ def test_mcp_main_uses_configured_host_and_port(monkeypatch):
     monkeypatch.setattr(mcp_main.mcp, "run", mock_run)
     monkeypatch.setattr(mcp_main.settings, "MCP_HOST", "0.0.0.0")
     monkeypatch.setattr(mcp_main.settings, "MCP_PORT", 8101)
-    
+
     mcp_main.main()
-    
+
     assert captured_args["host"] == "0.0.0.0"
     assert captured_args["port"] == 8101
     assert captured_args["transport"] == "streamable-http"
