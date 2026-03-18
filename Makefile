@@ -20,3 +20,24 @@ format:
 migrate:
 	alembic revision --autogenerate -m "$(msg)"
 	alembic upgrade head
+
+deploy-pull:
+	docker compose pull
+
+deploy-up:
+	docker compose up -d
+
+deploy-down:
+	docker compose down
+
+deploy-logs:
+	docker compose logs -f
+
+deploy-migrate:
+	docker compose --profile migrate run --rm migration
+
+deploy-restart:
+	docker compose restart
+
+deploy-status:
+	docker compose ps
