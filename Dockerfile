@@ -5,8 +5,7 @@ ENV UV_PROJECT_ENVIRONMENT=/app/.venv \
 
 WORKDIR /app
 COPY pyproject.toml uv.lock README.md ./
-RUN apt-get update && apt-get install -y --no-install-recommends curl ca-certificates && \
-    pip install --no-cache-dir uv && \
+RUN pip install --no-cache-dir uv && \
     uv sync --frozen --no-dev
 
 FROM python:3.13-slim AS final

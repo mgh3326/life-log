@@ -7,10 +7,7 @@ htmlcov
 dist
 build
 .env
-.env.prod
 .env.*
-!.env.example
-!.env.prod.example
 *.pyc
 *.pyo
 *.pyd
