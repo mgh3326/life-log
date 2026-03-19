@@ -48,6 +48,7 @@ Workout breakdown:
 
 ## Setup Notes
 
-- Both workflows use `localhost:8766` — must run on same machine as API
+- Both workflows use `localhost:8766` for development.
+- For production (Raspberry Pi), use `localhost:8100`.
 - Discord webhook URL configured in n8n credentials
 - Date format: ISO 8601 (YYYY-MM-DD)

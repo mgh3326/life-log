@@ -19,11 +19,11 @@ Built with FastAPI + SQLAlchemy async + PostgreSQL, following the same patterns 
 
 ## Ports
 
-| Service | Port |
-|---------|------|
-| life-log API | 8766 |
-| life-log MCP | 8767 |
-| auto_trader API | 8765 |
+| Service | Port (Dev) | Port (Prod) |
+|---------|------------|-------------|
+| life-log API | 8766 | 8100 |
+| life-log MCP | 8767 | 8101 |
+| auto_trader API | 8765 | - |
 
 ## Project Structure
 

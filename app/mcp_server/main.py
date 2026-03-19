@@ -1,5 +1,6 @@
 from fastmcp import FastMCP
 
+from app.core.config import settings
 from app.mcp_server.tools import register_all_tools
 
 mcp = FastMCP(
@@ -11,7 +12,11 @@ register_all_tools(mcp)
 
 
 def main() -> None:
-    mcp.run(transport="streamable-http", host="127.0.0.1", port=8767)
+    mcp.run(
+        transport="streamable-http",
+        host=settings.MCP_HOST,
+        port=settings.MCP_PORT,
+    )
 
 
 if __name__ == "__main__":
