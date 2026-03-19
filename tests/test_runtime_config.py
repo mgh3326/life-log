@@ -5,6 +5,7 @@ import app.mcp_server.main as mcp_main
 
 
 def test_settings_reads_mcp_port(monkeypatch):
+    original_settings = config_module.settings
     monkeypatch.setenv("MCP_PORT", "8101")
     monkeypatch.setenv("MCP_HOST", "0.0.0.0")
     reload(config_module)
@@ -12,6 +13,8 @@ def test_settings_reads_mcp_port(monkeypatch):
     # using the new environment variables.
     assert config_module.settings.MCP_PORT == 8101
     assert config_module.settings.MCP_HOST == "0.0.0.0"
+    # Restore original settings to avoid test pollution
+    config_module.settings = original_settings
 
 
 def test_mcp_main_uses_configured_host_and_port(monkeypatch):

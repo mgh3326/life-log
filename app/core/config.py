@@ -9,7 +9,7 @@ class Settings(BaseSettings):
     MCP_AUTH_TOKEN: str = ""
     API_PORT: int = 8766  # auto_trader uses 8765
     MCP_HOST: str = "127.0.0.1"
-    MCP_PORT: int = 8767
+    MCP_PORT: int = 8101
 
 
 settings = Settings()
